@@ -25,7 +25,7 @@
                     <td><?php echo e($ca->id); ?></td>
                     <td><?php echo e($ca->c_name); ?></td> 
                     <td><a href="./edit-category?id=<?php echo e($ca->id); ?>">Sửa</a></td>
-                  <td><a href="./delete-category?id=<?php echo e($ca->id); ?>">Xóa</a></td>               
+                  <td><a onclick="return confirm('Bạn có chắc chắn muốn xóa?');" href="./delete-category?id=<?php echo e($ca->id); ?>">Xóa</a></td>               
                  </tr>
              <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
            </tbody>
@@ -34,6 +34,7 @@
     </div>
     <br><br><br><br>
     <?php $__env->stopSection(); ?>
+   
 </body>
 </html>
 <?php echo $__env->make('layouts.main', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\HP\Desktop\XAMPP\htdocs\ASS-PHP2\ASS-PHP2\app\views/category/show-category.blade.php ENDPATH**/ ?>

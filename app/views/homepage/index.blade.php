@@ -36,7 +36,7 @@
                   <td>{{$pro->p_detail}}</td>
                   <td>{{$pro->cate_id}}</td>
                   <td><a href="./edit-product?id={{$pro->id}}">Sửa</a></td>
-                  <td><a href="./delete-product?id={{$pro->id}}">Xóa</a></td>
+                  <td><a onclick="return confirm('Bạn có chắc chắn muốn xóa?');" href="./delete-product?id={{$pro->id}}">Xóa</a></td>
                 
                 </tr>
             @endforeach

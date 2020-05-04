@@ -25,7 +25,7 @@
                     <td>{{$ca->id}}</td>
                     <td>{{$ca->c_name}}</td> 
                     <td><a href="./edit-category?id={{$ca->id}}">Sửa</a></td>
-                  <td><a href="./delete-category?id={{$ca->id}}">Xóa</a></td>               
+                  <td><a onclick="return confirm('Bạn có chắc chắn muốn xóa?');" href="./delete-category?id={{$ca->id}}">Xóa</a></td>               
                  </tr>
              @endforeach
            </tbody>
@@ -34,5 +34,6 @@
     </div>
     <br><br><br><br>
     @endsection
+   
 </body>
 </html>

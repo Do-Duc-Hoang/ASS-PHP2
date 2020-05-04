@@ -36,7 +36,7 @@
                   <td><?php echo e($pro->p_detail); ?></td>
                   <td><?php echo e($pro->cate_id); ?></td>
                   <td><a href="./edit-product?id=<?php echo e($pro->id); ?>">Sửa</a></td>
-                  <td><a href="./delete-product?id=<?php echo e($pro->id); ?>">Xóa</a></td>
+                  <td><a onclick="return confirm('Bạn có chắc chắn muốn xóa?');" href="./delete-product?id=<?php echo e($pro->id); ?>">Xóa</a></td>
                 
                 </tr>
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

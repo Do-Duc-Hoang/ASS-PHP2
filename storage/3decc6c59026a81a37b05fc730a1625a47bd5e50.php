@@ -51,7 +51,7 @@
                 
                 <nav class="nav-menu mobile-menu">
                     <ul>
-                        <li class="active"><a href="./">Quản lý sản phẩm</a></li>
+                        <li><a href="./">Quản lý sản phẩm</a></li>
                         <li><a href="./add-product">Thêm sản phẩm</a></li>
                         <li><a href="./categories">Quản lý danh mục</a>
                         </li>
