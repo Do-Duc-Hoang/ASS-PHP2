@@ -12,16 +12,26 @@ class CategoryController extends BaseController{
            ]);
        }
        public function add(){
-              $this->render('category.add-category',[]);
+              $msg = isset($_GET['msg']) ? $_GET['msg']: null;
+              $this->render('category.add-category',[
+                     'errorMsg'=>$msg
+              ]);
        }
        public function saveAdd(){
               $res = $_POST;
-
+              if($res == 0){
+                     $msg="Không bỏ trống dữ liệu";
+                     header("location:./add-category?msg=$msg");
+                     return false;
+              }else{
               $model = new Category();
               $model->fill($res);
               $model->save();
               header('location: ./categories?msg=thêm thành công');
+              return true;
+              }
        }
+       
        public function edit(){
               $editId= $_GET['id'];
               $editId = isset($_GET['id'])? $_GET['id']:null;
@@ -35,9 +45,10 @@ class CategoryController extends BaseController{
                      header("location: ./categories?msg=$msg");
                      die;
               }
-
+              $msg = isset($_GET['msg']) ? $_GET['msg']: null;
               $this->render('category.edit-category',[
-                     'cate'=>$model
+                     'cate'=>$model,
+                     'errorMsg'=>$msg
               ]);
        }
        public function saveEdit(){
@@ -54,9 +65,17 @@ class CategoryController extends BaseController{
                      die;
               }
               $res=$_POST;
+              if($res == 0){
+                     $msg="không để trống dữ liệu";
+                   
+                     header("location: ./edit-category?id=$editId&msg=$msg");
+                     return false;
+              }else{
               $model->fill($res);
               $model->save();
               header('location: ./categories?msg=Sửa thành công');
+              return true;
+              }
        }
        public function delete(){
               $editId= $_GET['id'];

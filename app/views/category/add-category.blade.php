@@ -20,6 +20,9 @@
                     <div class="form-group">
                         <label for="">Tên danh mục</label>
                         <input type="text" name="c_name" class="form-control">
+                     
+                        <p style="color: red">{{$errorMsg}}</p>
+                      
                     </div>
                   
                 <div class=" col-12 text-center">
