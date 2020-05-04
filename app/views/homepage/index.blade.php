@@ -34,7 +34,7 @@
                   <td><img src="{{$pro->image}}" class="img-avatar" width="100"></td>
                   <td>{{$pro->p_description}}</td>
                   <td>{{$pro->p_detail}}</td>
-                  <td>{{$pro->cate_id}}</td>
+                  <td>{{$pro->getCategoryName()}}</td>
                   <td><a href="./edit-product?id={{$pro->id}}">Sửa</a></td>
                   <td><a onclick="return confirm('Bạn có chắc chắn muốn xóa?');" href="./delete-product?id={{$pro->id}}">Xóa</a></td>
                 

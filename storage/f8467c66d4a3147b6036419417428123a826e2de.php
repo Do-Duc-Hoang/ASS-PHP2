@@ -34,7 +34,7 @@
                   <td><img src="<?php echo e($pro->image); ?>" class="img-avatar" width="100"></td>
                   <td><?php echo e($pro->p_description); ?></td>
                   <td><?php echo e($pro->p_detail); ?></td>
-                  <td><?php echo e($pro->cate_id); ?></td>
+                  <td><?php echo e($pro->getCategoryName()); ?></td>
                   <td><a href="./edit-product?id=<?php echo e($pro->id); ?>">Sửa</a></td>
                   <td><a onclick="return confirm('Bạn có chắc chắn muốn xóa?');" href="./delete-product?id=<?php echo e($pro->id); ?>">Xóa</a></td>
                 
